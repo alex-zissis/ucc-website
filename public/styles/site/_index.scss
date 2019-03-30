@@ -130,9 +130,6 @@ section {
     z-index: 10;
 }
 
-.paralex-container {
-    margin-top: 5vh;
-}
 
 .ms-text {
     width: 100%;
@@ -336,6 +333,7 @@ section.module.parallax-2 { background-image: url("https://www.cssscript.com/dem
 
 section.module.parallax-3 { background-image: url("https://www.cssscript.com/demo/pure-css-parallax-background-images/img/rMountains.jpg"); }
 
+
 section.module:last-child{
     margin-bottom: 0;
 }
@@ -368,12 +366,16 @@ section.module.parallax {
     background-size: cover;
 
     @include for-phone-only {
-        height: 200px;
+        height: 400px;
     }
 
     @include for-tablet-portrait-up {
         height: 400px;
     }
+}
+
+.section.module.parralax.ios {
+    background-attachment: scroll;
 }
 
 // section.module.parallax h1{

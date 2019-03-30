@@ -96,6 +96,17 @@ function scrollFromSidebar(selector) {
 //     scrollToDiv('.content-container');
 // }, false);
 
+window.onload = function () {
+    if (/^(iPhone|iPad|iPod)/.test(navigator.platform)) {
+        var elems = document.getElementsByClassName('parallax');
+
+        for (var i = 0; i < elems.length; i++) {
+            elems[i].classList.add('ios');
+        }
+    }
+
+}
+
 window.onscroll = function () {
     var offset = getScrollOffsets();
     var navbar = document.getElementsByClassName('navbar')[0];

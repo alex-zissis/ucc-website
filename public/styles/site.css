@@ -6230,9 +6230,6 @@ section {
   position: relative;
   z-index: 10; }
 
-.paralex-container {
-  margin-top: 5vh; }
-
 .ms-text {
   width: 100%; }
 
@@ -6425,10 +6422,13 @@ section.module.parallax {
   background-size: cover; }
   @media (max-width: 599px) {
     section.module.parallax {
-      height: 200px; } }
+      height: 400px; } }
   @media (min-width: 600px) {
     section.module.parallax {
       height: 400px; } }
+
+.section.module.parralax.ios {
+  background-attachment: scroll; }
 
 .wwd > img {
   width: 70%;
