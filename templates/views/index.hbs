@@ -1,0 +1,138 @@
+{{!< default}}
+<div class="sidebar">
+	<div class="inner-sidebar">
+		<div class="sidebar-logo-cont" onclick="scrollFromSidebar('.splash')"><img class="sidebar-logo"
+				src="/images/uts_cc_black.png">
+		</div>
+		<div class="sidelink-container">
+			<a class="sidelink" onclick="scrollFromSidebar('.content-container')">What we do</a>
+			<a class="sidelink" onclick="scrollFromSidebar('#contactus')">Contact us</a>
+			<a class="sidelink" onclick="scrollFromSidebar('#portfolio')">Portfolio</a>
+			<a class="sidelink" onclick="scrollFromSidebar('#sponsors')">Sponsors</a>
+		</div>
+	</div>
+</div>
+<div class="page-container" onclick="mainPageClickHandler(event)">
+	<div class="navbar untouched">
+		<div class="navbar-logo-cont" onclick="scrollToDiv('.splash')">
+			<img class="navbar-logo" src="/images/uts_cc_trans.png">
+		</div>
+		<div class="navlink-container">
+			<a class="navlink" onclick="scrollToDiv('.content-container')">What we do</a>
+			<a class="navlink" onclick="scrollToDiv('#contactus')">Contact us</a>
+			<a class="navlink" onclick="scrollToDiv('#portfolio')">Portfolio</a>
+			<a class="navlink" onclick="scrollToDiv('#sponsors')">Sponsors</a>
+		</div>
+		<i class="fas fa-bars hamburger" onclick="toggleSidebar()"></i>
+	</div>
+	<div class="splash">
+		<img class="splash-img" src="/images/uts.png">
+		<h1 class="splash-text-container">Welcome to <br class="lb-no-mobile">UTS Consulting Club</h1>
+		<a class="scroll-down" onclick="scrollToDiv('.content-container')"><span class="arrow"></span></a>
+		<div class="splash-cutout"></div>
+		<div class="splash-overlay"></div>
+	</div>
+
+	<div class="content-container">
+		<section class="grey">
+			<h1 class="heading">Mission statement</h1>
+			<div class="ms-container">
+				<div class="mission-statement">
+					<span class="ms-text">" To be the man you gotta beat the man asadsadasdsadasdas dasdasdasd
+						asdasdsadsa d "</span>
+				</div>
+			</div>
+		</section>
+		<section class="white" id="whatwedo">
+			<h1 class="heading">What we do</h1>
+			<div class="wwd-container">
+				<div class="card wwd">
+					<h3>Industry Events</h3>
+					<img src="/images/wwd-networking.svg">
+				</div>
+				<div class="card wwd">
+					<h3>Pro Bono Consulting</h3>
+					<img src="/images/wwd-consulting.svg">
+				</div>
+				<div class="card wwd">
+					<h3>Workshops</h3>
+					<img src="/images/wwd-workshops.svg">
+				</div>
+			</div>
+			<p class="desc">The UTS Consulting Club (UTS.CC) offers talented UTS Students the opportunity to provide pro
+				bono
+				management consulting services to local startups and small businesses and advise them on their toughest
+				challenges.
+
+				In addition, UTSCC offers members the opportunity to professionally develop by attending informative
+				workshops, networking events and engaging with industry representatives from the consulting industry.
+			</p>
+		</section>
+	</div>
+
+	<div class="arrow-up" onclick="scrollToDiv('.splash')">
+		<i class="fas fa-chevron-up up-icon" onclick="toggleSidebar()"></i>
+	</div>
+
+	<div class="paralex-container">
+		<section class=" module parallax parallax-1">
+			<div class="container">
+			</div>
+		</section>
+		<!--first section -->
+		<section class="module content grey">
+			<div class="container" id="contactus">
+				<h2>Contact us</h2>
+				<a class="activate-link" href="https://activateuts.com.au/clubs/uts-consulting-club" target="_blank">
+					<img src="/images/activate_logo.svg"> <span>Join Us</span>
+				</a>
+				<br><br><br><br>
+				<form method="post" class="contact-form">
+					<input type='hidden' name='action' value='contact'>
+					<input type="text" id="cf-name" name="name" minlength="1" maxlength="40" class="cf-input"
+						placeholder="Name" required onfocus="addTouched('cf-name')"
+						oninvalid="invalidCallback('cf-name')" onkeydown="fieldValidation('cf-name')"><br>
+					<span class="error-text" id="ef-err-name"></span> <br>
+					<input type="email" id="cf-email" minlength="1" name="email" maxlength="40" class="cf-input"
+						placeholder="Email" required onfocus="addTouched('cf-email')"
+						oninvalid="invalidCallback('cf-email')" onkeydown="fieldValidation('cf-email')"><br>
+					<span class="error-text" id="ef-err-email"></span><br>
+					<input type="text" id="cf-subject" minlength="1" name="subject" maxlength="40" class="cf-input"
+						placeholder="Subject" required onfocus="addTouched('cf-subject')"
+						oninvalid="invalidCallback('cf-subject')" onkeydown="fieldValidation('cf-subject')"><br>
+					<span class="error-text" id="ef-err-subject"></span><br>
+					<textarea type="text" id="cf-message" minlength="0" name="message" maxlength="1280" class="cf-input"
+						placeholder="Message" required onfocus="addTouched('cf-message')"
+						oninvalid="invalidCallback('cf-message')"
+						onkeydown="fieldValidation('cf-message')"></textarea><br>
+					<span class="error-text" id="ef-err-message"></span><br><br>
+					<input type="submit" class="cf-submit" value="Submit">
+				</form>
+			</div>
+		</section>
+		<!--Grand Canyon content -->
+
+		<section class="module parallax parallax-2">
+			<div class="container">
+			</div>
+		</section> <!-- end of rocky mountains -->
+
+		<section class="module content">
+			<div class="container" id="portfolio">
+				<h2>Portfolio showcase</h2>
+
+			</div>
+		</section> <!-- end Rocky Mountain content -->
+
+		<section class="module parallax parallax-3">
+			<div class="container">
+			</div>
+		</section>
+
+		<section class="module content">
+			<div class="container" id="sponsors">
+				<h2>Sponsors</h2>
+			</div>
+		</section>
+	</div>
+</div>

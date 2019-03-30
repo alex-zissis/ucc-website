@@ -1,0 +1,25 @@
+// Override Bootstrap variables in this file, e.g.
+
+$font-size-base: 14px;
+
+$deep-blue: #2616dd;
+$blue-grey: #161447;
+
+$headings-font: 'Lato', sans-serif;
+$body-font: 'Roboto', sans-serif;
+
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+  }
+  @mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }

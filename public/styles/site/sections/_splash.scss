@@ -1,0 +1,46 @@
+.splash {
+    height: 100vh;
+    width: auto;
+    max-width: 100vw;
+    background-color: yellow;
+    overflow: none;
+}
+
+.splash-img {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.splash-overlay {
+    background-color: $deep-blue;
+    opacity: .5;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
+
+.splash-cutout {
+    position: absolute;
+    z-index: 5;
+    opacity: .8;
+    width: 100%;
+    height: 100%;
+    box-shadow: 20px 20px 20px 20px black;
+    top: 50%;
+    background-color: white;
+    transform: skewY(20deg);
+}
+
+.splash-text-container {
+    position: absolute;
+    text-align: right;
+    right: 10%;
+    font-size: 5em;
+    top: 40%;
+    z-index: 20;
+    color: #dedede;
+} 

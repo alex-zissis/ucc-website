@@ -1,0 +1,450 @@
+@import "sections/splash";
+@import "sections/navbar";
+@import "sections/card";
+
+.content-container {
+    position: relative;
+    height: auto;
+    width: 100%;
+    min-height: 800px;
+    z-index: 15;
+     background-color: white;
+}
+
+.wwd-container {
+    display: flex;
+    margin: auto;
+    align-items: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    background-color: white;
+}
+section {
+    width: 100%;
+    padding: 5vh;
+}
+
+.grey {
+    background-color: #f1f1f1;
+}
+
+.white {
+    background-color: white;
+}
+
+.arrow-up {
+    position: fixed;
+    z-index: 30;
+    right: 5%;
+    bottom: 5%;
+    height: 40px;
+    width: 40px;
+    display: none;
+    text-align: center;
+    border-radius: 20px;
+    background-color: $blue-grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .8;
+}
+
+.arrow-up:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.up-icon {
+    display: block;
+    font-size: 20px;
+    margin-top: 5px;
+    color: #fff;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 5px;
+}
+
+.up-icon:hover {
+    margin-top:0px;
+}
+
+.navbar-logo:hover, .sidebar-logo:hover {
+    cursor: pointer;
+}
+
+.ms-container {
+    padding: 5% 10%;
+    margin: auto;
+
+    @include for-phone-only {
+        width: 90%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 90%;
+    }
+
+    @include for-tablet-landscape-up {
+        width: 60%;
+    }
+}
+
+.mission-statement {
+    color: $blue-grey;
+    font-size: 2em;
+    border-left: 10px solid $deep-blue;
+    font-weight: 100;
+    height: max-content;
+    font-style: italic;
+    background-color: white;
+    padding: 5% 10%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.ms-speech {
+    display: inline;
+    font-size: 2em;
+}
+
+.img-mask {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: block;
+    margin: auto;
+}
+
+.heading {
+    margin-left: 10%;
+    position: relative;
+    z-index: 10;
+}
+
+.paralex-container {
+    margin-top: 5vh;
+}
+
+.ms-text {
+    width: 100%;
+}
+
+.activate-link {
+    background-color: black;
+    color: #8DC63F;
+    padding: 20px 10px;
+    border-radius: 10px;
+    height: 48px;
+    margin-bottom: 30px;
+    @include for-phone-only {
+        position: relative;
+        left: 20%;
+    }
+
+    @include for-tablet-portrait-up {
+        position: relative;
+        left: 60%;
+    }
+
+    @include for-desktop-up {
+        position: relative;
+        left: 70%;
+    }
+
+    @include for-big-desktop-up {
+        position: relative;
+        left: 80%;
+    }
+}
+
+.activate-link:hover {
+    text-decoration: none;
+    color: #8DC63F;
+}
+
+.activate-link:visited {
+    text-decoration: none;
+    color: #8DC63F;
+}
+
+.activate-link > span {
+    font-size: 1.2em;
+    position: relative;
+    top: 2px;
+}
+
+.contact-form {
+    width: 80% !important;
+    background-color: white;
+    padding: 20px 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.desc {
+    @include for-phone-only {
+        width: 90%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 90%;
+    }
+
+
+    @include for-tablet-landscape-up {
+        width: 60%;
+    }
+    margin: auto;
+    margin-top: 50px;
+    font-size: 1.3em;
+    padding: 20px 20px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.desc:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.contact-form:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.cf-input {
+    margin-top: 2vh;
+    font-size: 1.1em;
+    border: 0;
+    font-weight: 100;
+    border-bottom: 1px solid $blue-grey;
+
+}
+
+.cf-input:valid {
+    border-bottom: 1px solid green;
+}
+
+.cf-input.touched:invalid {
+    border-bottom: 1px solid red;
+}
+
+.cf-submit {
+    padding: 5px 10px;
+    background-color: $blue-grey;
+    color: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.contact-form > label {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+#cf-name {
+    width: 20%;
+
+    @include for-phone-only {
+        width: 60%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 40%;
+    }
+
+    @include for-tablet-landscape-up {
+        width: 20%;
+    }
+
+}
+
+#cf-email {
+    @include for-phone-only {
+        width: 80%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 60%;
+    }
+
+    @include for-tablet-landscape-up {
+        width: 30%;
+    }
+}
+
+#cf-subject {
+    @include for-phone-only {
+        width: 100%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 75%;
+    }
+
+    @include for-tablet-landscape-up {
+        width: 50%;
+    }
+}
+
+#cf-message {
+    height: 200px;
+
+    @include for-phone-only {
+        width: 100%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 90%;
+    }
+
+    @include for-tablet-landscape-up {
+        width: 80%;
+    }
+}
+
+.error-text {
+    font-size: .8em;
+    color: red;
+}
+
+.activate-link > img {
+    margin-right: 10px;
+}
+
+section.module.parallax {
+    border-top: 10px solid $blue-grey;
+    border-bottom: 10px solid $blue-grey;
+}
+
+section.module.parallax-1 { background-image: url("https://www.cssscript.com/demo/pure-css-parallax-background-images/img/gCanyon.jpg"); }
+
+section.module.parallax-2 { background-image: url("https://www.cssscript.com/demo/pure-css-parallax-background-images/img/niagra.jpg"); }
+
+section.module.parallax-3 { background-image: url("https://www.cssscript.com/demo/pure-css-parallax-background-images/img/rMountains.jpg"); }
+
+section.module:last-child{
+    margin-bottom: 0;
+}
+
+section.module h2{
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+section.module p{
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+section.module p:last-child{
+    margin-bottom: 0;
+}
+
+section.module.content{
+    padding: 40px 0;
+    //box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+section.module.parallax {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    @include for-phone-only {
+        height: 200px;
+    }
+
+    @include for-tablet-portrait-up {
+        height: 400px;
+    }
+}
+
+// section.module.parallax h1{
+//     color: rgba(255, 255, 255, 0.8);
+//     font-size: 48px;
+//     line-height: 600px;
+//     font-weight: 700;
+//     text-align: center;
+//     text-transform: uppercase;
+//     text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+// }
+
+.wwd > img {
+    width: 70%;
+    max-height: 70%;
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+
+    @include for-phone-only {
+        margin-top: 15%;
+    }
+}
+
+.wwd > h3 {
+    display: block;
+    color: $deep-blue;
+}
+
+.wwd-image {
+    width: 100%;
+}
+
+@media all and (min-width: 600px) {
+    section.module h2 {
+        font-size: 42px;
+    }
+    section.module p {
+        font-size: 20px;
+    }
+    section.module.parallax h1 {
+        font-size: 96px;
+    }
+}
+@media all and (min-width: 960px) {
+    section.module.parallax h1 {
+        font-size: 160px;
+    }
+}
+
+.circle {
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: pink;
+}
+
+#flash-messages {
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    min-width: 300px;
+    max-width: 400px;
+    width: 30vw;
+    z-index: 60;
+}
+
+.close {
+    position: absolute;
+    top: 2px;
+    right: 30px;
+}

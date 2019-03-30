@@ -1,0 +1,7 @@
+.lb-no-mobile {
+    display: static;
+
+    @include for-phone-only {
+        display: none;
+    }
+}
