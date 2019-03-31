@@ -5,10 +5,13 @@
 				src="/images/uts_cc_black.png">
 		</div>
 		<div class="sidelink-container">
-			<a class="sidelink" onclick="scrollFromSidebar('.content-container')">What we do</a>
+			{{#each links}}
+			<a class="sidelink" onclick="scrollFromSidebar('{{this.element}}')">{{this.displayText}}</a>
+			{{/each}}
+			{{!-- <a class="sidelink" onclick="scrollFromSidebar('.content-container')">What we do</a>
 			<a class="sidelink" onclick="scrollFromSidebar('#contactus')">Contact us</a>
 			<a class="sidelink" onclick="scrollFromSidebar('#portfolio')">Portfolio</a>
-			<a class="sidelink" onclick="scrollFromSidebar('#sponsors')">Sponsors</a>
+			<a class="sidelink" onclick="scrollFromSidebar('#sponsors')">Sponsors</a> --}}
 		</div>
 	</div>
 </div>
@@ -18,15 +21,18 @@
 			<img class="navbar-logo" src="/images/uts_cc_trans.png">
 		</div>
 		<div class="navlink-container">
-			<a class="navlink" onclick="scrollToDiv('.content-container')">What we do</a>
+			{{#each links}}
+			<a class="navlink" onclick="scrollToDiv('{{this.element}}')">{{this.displayText}}</a>
+			{{/each}}
+			{{!-- <a class="navlink" onclick="scrollToDiv('.content-container')">What we do</a>
 			<a class="navlink" onclick="scrollToDiv('#contactus')">Contact us</a>
 			<a class="navlink" onclick="scrollToDiv('#portfolio')">Portfolio</a>
-			<a class="navlink" onclick="scrollToDiv('#sponsors')">Sponsors</a>
+			<a class="navlink" onclick="scrollToDiv('#sponsors')">Sponsors</a> --}}
 		</div>
 		<i class="fas fa-bars hamburger" onclick="toggleSidebar()"></i>
 	</div>
 	<div class="splash">
-		<img class="splash-img" src="/images/uts.png">
+		<img class="splash-img" src="{{images.building8.secure_url}}">
 		<h1 class="splash-text-container">Welcome to <br class="lb-no-mobile">UTS Consulting Club</h1>
 		<a class="scroll-down" onclick="scrollToDiv('.content-container')"><span class="arrow"></span></a>
 		<div class="splash-cutout"></div>
@@ -38,15 +44,27 @@
 			<h1 class="heading">Mission statement</h1>
 			<div class="ms-container">
 				<div class="mission-statement">
-					<span class="ms-text">" eque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
-						adipisci velit... "</span>
+					<span class="ms-text">" {{static.MissionStatement}} "</span>
 				</div>
 			</div>
 		</section>
 		<section class="white" id="whatwedo">
-			<h1 class="heading">What we do</h1>
 			<div class="wwd-container">
-				<div class="card wwd">
+				{{#each WWD}}
+				<div class="flip-container">
+					<div class="card wwd" onclick="cardFlip(event)">
+						<div class="face front">
+							<h3>{{this.title}}</h3>
+							<img src="{{this.imagePath}}">
+						</div>
+						<div class="face back">
+							<h3>{{this.title}}</h3>
+							<span>{{this.desc}}</span>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+				{{!-- <div class="card wwd">
 					<h3>Industry Events</h3>
 					<img src="/images/wwd-networking.svg">
 				</div>
@@ -57,16 +75,9 @@
 				<div class="card wwd">
 					<h3>Workshops</h3>
 					<img src="/images/wwd-workshops.svg">
-				</div>
+				</div> --}}
 			</div>
-			<p class="desc">The UTS Consulting Club (UTS.CC) offers talented UTS Students the opportunity to provide pro
-				bono
-				management consulting services to local startups and small businesses and advise them on their toughest
-				challenges.
-
-				In addition, UTSCC offers members the opportunity to professionally develop by attending informative
-				workshops, networking events and engaging with industry representatives from the consulting industry.
-			</p>
+			<p class="desc">{{static.AboutUs}}</p>
 		</section>
 	</div>
 
@@ -80,6 +91,19 @@
 			</div>
 		</section>
 		<!--first section -->
+		<section class="module content white">
+			<div class="container" id="portfolio">
+				<h2>Portfolio showcase</h2>
+
+			</div>
+		</section>
+		<!--Grand Canyon content -->
+
+		<section class="module parallax parallax-2">
+			<div class="container">
+			</div>
+		</section> <!-- end of rocky mountains -->
+
 		<section class="module content grey">
 			<div class="container" id="contactus">
 				<h2>Contact us</h2>
@@ -109,19 +133,7 @@
 					<input type="submit" class="cf-submit" value="Submit">
 				</form>
 			</div>
-		</section>
-		<!--Grand Canyon content -->
 
-		<section class="module parallax parallax-2">
-			<div class="container">
-			</div>
-		</section> <!-- end of rocky mountains -->
-
-		<section class="module content grey">
-			<div class="container" id="portfolio">
-				<h2>Portfolio showcase</h2>
-
-			</div>
 		</section> <!-- end Rocky Mountain content -->
 
 		<section class="module parallax parallax-3">

@@ -1,6 +1,7 @@
 @import "sections/splash";
 @import "sections/navbar";
 @import "sections/card";
+@import "sections/contactus";
 
 .content-container {
     position: relative;
@@ -179,12 +180,7 @@ section {
     top: 2px;
 }
 
-.contact-form {
-    width: 80% !important;
-    background-color: white;
-    padding: 20px 30px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
+
 
 .desc {
     @include for-phone-only {
@@ -211,34 +207,6 @@ section {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-
-.contact-form:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-.cf-input {
-    margin-top: 2vh;
-    font-size: 1.1em;
-    border: 0;
-    font-weight: 100;
-    border-bottom: 1px solid $blue-grey;
-
-}
-
-.cf-input:valid {
-    border-bottom: 1px solid green;
-}
-
-.cf-input.touched:invalid {
-    border-bottom: 1px solid red;
-}
-
-.cf-submit {
-    padding: 5px 10px;
-    background-color: $blue-grey;
-    color: white;
-}
-
 input:focus,
 select:focus,
 textarea:focus,
@@ -246,77 +214,6 @@ button:focus {
     outline: none;
 }
 
-.contact-form > label {
-    margin-top: 10px;
-    font-size: 1.1em;
-    font-weight: 400;
-}
-
-#cf-name {
-    width: 20%;
-
-    @include for-phone-only {
-        width: 60%;
-    }
-
-    @include for-tablet-portrait-up {
-        width: 40%;
-    }
-
-    @include for-tablet-landscape-up {
-        width: 20%;
-    }
-
-}
-
-#cf-email {
-    @include for-phone-only {
-        width: 80%;
-    }
-
-    @include for-tablet-portrait-up {
-        width: 60%;
-    }
-
-    @include for-tablet-landscape-up {
-        width: 30%;
-    }
-}
-
-#cf-subject {
-    @include for-phone-only {
-        width: 100%;
-    }
-
-    @include for-tablet-portrait-up {
-        width: 75%;
-    }
-
-    @include for-tablet-landscape-up {
-        width: 50%;
-    }
-}
-
-#cf-message {
-    height: 200px;
-
-    @include for-phone-only {
-        width: 100%;
-    }
-
-    @include for-tablet-portrait-up {
-        width: 90%;
-    }
-
-    @include for-tablet-landscape-up {
-        width: 80%;
-    }
-}
-
-.error-text {
-    font-size: .8em;
-    color: red;
-}
 
 .activate-link > img {
     margin-right: 10px;
@@ -389,10 +286,87 @@ section.module.parallax.ios {
 
 // }
 
-.wwd > img {
+.flip-container {
+    height: 350px;
+    margin: 25px 25px 0 25px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 1;
+    
+    @include for-phone-only {
+        width: 100%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 350px;
+    }
+}
+
+.flip-container {
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -o-perspective: 1000px;
+}
+
+.wwd {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform-style: preserve-3d;
+    transition: all 1s linear;
+    -webkit-transform-style: preserve-3d;
+	-webkit-transition: all 1s linear;
+	-moz-transform-style: preserve-3d;
+	-moz-transition: all 1s linear;
+	-o-transform-style: preserve-3d;
+	-o-transition: all 1s linear;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    padding: 20px;
+}
+
+.face.back {
+    display: block;
+    position: absolute;
+    z-index: 200;
+    -webkit-transform: rotateY(180deg);
+    -webkit-box-sizing: border-box;
+    -moz-transform: rotateY(180deg);
+    -moz-box-sizing: border-box;
+    -o-transform: rotateY(180deg);
+    -o-box-sizing: border-box;
+    transform: rotateY(180deg);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.face.back > span {
+    font-size: .8em;
+    font-weight: 100;
+}
+
+.flip-container:hover .wwd {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+
+  }
+
+.wwd > .face > img {
     width: 70%;
     max-height: 70%;
     display: block;
+    visibility: visible;
     margin: auto;
     margin-top: 10%;
 
@@ -401,14 +375,18 @@ section.module.parallax.ios {
     }
 }
 
-.wwd > h3 {
+.wwd > .face > h3 {
+    text-align: left;
     display: block;
+    margin-left: 10px;
+    margin-top: 10px;
     color: $deep-blue;
 }
 
 .wwd-image {
     width: 100%;
 }
+
 
 @media all and (min-width: 600px) {
     section.module h2 {

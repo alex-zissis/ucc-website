@@ -1,0 +1,111 @@
+.contact-form {
+    width: 80% !important;
+    background-color: white;
+    padding: 20px 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+    @include for-phone-only {
+        width: 100% !important;
+    }
+}
+
+.contact-form:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.cf-input {
+    margin-top: 2vh;
+    font-size: 1.1em;
+    border: 0;
+    font-weight: 100;
+    border-bottom: 1px solid $blue-grey;
+
+}
+
+.cf-input:valid {
+    border-bottom: 1px solid green;
+}
+
+.cf-input.touched:invalid {
+    border-bottom: 1px solid red;
+}
+
+.cf-submit {
+    padding: 5px 10px;
+    background-color: $blue-grey;
+    color: white;
+}
+
+
+#cf-name {
+    width: 20%;
+
+    @include for-phone-only {
+        width: 60%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 40%;
+    }
+
+    @include for-tablet-landscape-up {
+        width: 20%;
+    }
+
+}
+
+#cf-email {
+    @include for-phone-only {
+        width: 80%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 60%;
+    }
+
+    @include for-tablet-landscape-up {
+        width: 30%;
+    }
+}
+
+#cf-subject {
+    @include for-phone-only {
+        width: 100%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 75%;
+    }
+
+    @include for-tablet-landscape-up {
+        width: 50%;
+    }
+}
+
+#cf-message {
+    height: 200px;
+
+    @include for-phone-only {
+        width: 100%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 90%;
+    }
+
+    @include for-tablet-landscape-up {
+        width: 80%;
+    }
+}
+
+
+.error-text {
+    font-size: .8em;
+    color: red;
+}
+
+.contact-form > label {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: 400;
+}

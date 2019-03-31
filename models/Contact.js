@@ -2,7 +2,7 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * User Model
+ * Link Model
  * ==========
  */
 var Contact = new keystone.List('Contact', {
