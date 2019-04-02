@@ -7,7 +7,8 @@ before_script:
   - "mkdir -p dist"
 script: 
   - "npm run test"
-  - "zip -r dist/ucc-website.zip ./"
+  - "./deploy-scripts/envvars.sh"
+  - "zip -r dist/ucc-website.zip ./ -x node_modules/*"
 
 deploy:
   - provider: s3
@@ -15,11 +16,13 @@ deploy:
     region: ap-southeast-2
     local_dir: "./dist"
     upload_dir: "latest"
+    on:
+      branch: develop
   - provider: codedeploy
     bucket: "ucc-website"
     key: latest/ucc-wesbite.zip
-    application: CD-UCC-Website
-    deployment_group: CD-DG-UCCWEB01
+    application: "CD-UCC-Website"
+    deployment_group: "CD-DG-UCCWEB01"
     on:
       branch: develop
 
