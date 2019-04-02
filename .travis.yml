@@ -2,9 +2,12 @@ language: node_js
 sudo: true
 node_js: "10"
 services: mongodb
+
 before_script: 
   - "npm run lint"
+  - "chmod +x deploy-scripts/*"
   - "mkdir -p dist"
+
 script: 
   - "npm run test"
   - "./deploy-scripts/envvars.sh"
