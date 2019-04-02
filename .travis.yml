@@ -8,7 +8,7 @@ before_script:
 script: 
   - "npm run test"
   - "./deploy-scripts/envvars.sh"
-  - "zip -r dist/ucc-website.zip ./ -x *node_modules*"
+  - "zip -r dist/ucc-website.zip ./ -x '*node_modules*'"
 
 deploy:
   - provider: s3
