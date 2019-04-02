@@ -5,6 +5,7 @@ var StaticContent = keystone.list('StaticContent');
 var WWD = keystone.list('WWD');
 var Image = keystone.list('Image');
 var Sponsor = keystone.list('Sponsor');
+var sendEmail = require('../../sendEmail');
 
 exports = module.exports = function (req, res) {
 
@@ -24,6 +25,8 @@ exports = module.exports = function (req, res) {
 
 		var application = new Contact.model();
 		var updater = application.getUpdateHandler(req);
+
+		sendEmail.enquiryEmail(req.body);
 
 		updater.process(req.body, {
 			flashErrors: true,

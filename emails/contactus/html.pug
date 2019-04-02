@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    style
+      include template.css
+  body
+    div(class="overlay")
+      h3 Hi Team,
+      p A new enquiry has been recieved at utsconsultingclub.com.au.
+      table 
+        tr 
+          td 
+            b Name
+          td #{ message.name }
+        tr
+          td 
+            b Email
+          td #{ message.email }
+        tr
+          td 
+            b Subject
+          td #{ message.subject }
+      
+      p(class="quoted") #{ message.content }

@@ -2,8 +2,27 @@ language: node_js
 sudo: true
 node_js: "10"
 services: mongodb
-before_script: "npm run lint"
-script: npm run test
+before_script: 
+  - "npm run lint"
+  - "mkdir -p dist"
+script: 
+  - "npm run test"
+  - "zip -r dist/ucc-website.zip ./"
+
+deploy:
+  - provider: s3
+    bucket: ucc-website
+    region: ap-southeast-2
+    local_dir: "./dist"
+    upload_dir: "latest"
+  - provider: codedeploy
+    bucket: "ucc-website"
+    key: latest/ucc-wesbite.zip
+    application: CD-UCC-Website
+    deployment_group: CD-DG-UCCWEB01
+    on:
+      branch: develop
+
 notifications:
   email:
     - alex_z9@outlook.com
