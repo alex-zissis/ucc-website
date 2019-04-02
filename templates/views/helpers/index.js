@@ -95,7 +95,7 @@ module.exports = function () {
 		var suffix = _.isString(options.hash.suffix) ? options.hash.suffix : '';
 		var output = '';
 
-		function createTagList(tags) {
+		function createTagList (tags) {
 			var tagNames = _.map(tags, 'name');
 
 			if (autolink) {

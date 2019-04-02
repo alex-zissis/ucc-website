@@ -6196,6 +6196,27 @@ a {
   font-size: 1.1em;
   font-weight: 400; }
 
+.sponsors-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto; }
+  @media (max-width: 599px) {
+    .sponsors-container {
+      width: 90%; } }
+  @media (min-width: 600px) {
+    .sponsors-container {
+      width: 80%; } }
+
+.sponsor {
+  width: 150px;
+  height: 150px; }
+
+.sponsor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; }
+
 .content-container {
   position: relative;
   height: auto;

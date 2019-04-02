@@ -6,15 +6,16 @@ function scrollToDiv(selector) {
 }
 
 function getScrollOffsets() {
-    var doc = document, w = window;
+    var doc = document;
+    var w = window;
     var x, y, docEl;
 
     if (typeof w.pageYOffset === 'number') {
         x = w.pageXOffset;
         y = w.pageYOffset;
     } else {
-        docEl = (doc.compatMode && doc.compatMode === 'CSS1Compat') ?
-            doc.documentElement : doc.body;
+        docEl = (doc.compatMode && doc.compatMode === 'CSS1Compat')
+            ? doc.documentElement : doc.body;
         x = docEl.scrollLeft;
         y = docEl.scrollTop;
     }
@@ -73,7 +74,7 @@ function toggleSidebar() {
 
     if (!sidebar) {
         elem.style.display = 'block';
-        parentContainer.style.opacity = .5;
+        parentContainer.style.opacity = 0.5;
         elem.classList.remove('close');
         elem.classList.add('open');
         bodyScrollLock.disableBodyScroll(elem);
@@ -105,7 +106,7 @@ window.onload = function () {
         }
     }
 
-}
+};
 
 window.onscroll = function () {
     var offset = getScrollOffsets();
@@ -114,13 +115,13 @@ window.onscroll = function () {
     var splash = document.getElementsByClassName('splash')[0];
     var arrow = document.getElementsByClassName('arrow-up')[0];
 
-    if (offset['y'] === 0 && !navbar.classList.contains('untouched')) {
+    if (offset.y === 0 && !navbar.classList.contains('untouched')) {
         navbar.classList.remove('touched');
         navbar.classList.add('untouched');
         navbar.classList.add('animate-none');
         navbarLogo.src = '/images/uts_cc_trans.png';
         arrow.style.display = 'none';
-    } else if (offset['y'] > 0 && navbar.classList.contains('untouched')) {
+    } else if (offset.y > 0 && navbar.classList.contains('untouched')) {
         navbar.classList.remove('untouched');
         navbar.classList.remove('animate-none');
         navbar.classList.add('touched');
@@ -128,7 +129,7 @@ window.onscroll = function () {
         arrow.style.display = 'block';
     }
 
-}
+};
 
 document.getElementsByClassName('inner-sidebar')[0].addEventListener('touchstart', handleTouchStart, { passive: true });
 document.getElementsByClassName('inner-sidebar')[0].addEventListener('touchmove', handleTouchMove, { passive: true });
@@ -137,8 +138,8 @@ var xDown = null;
 var yDown = null;
 
 function getTouches(evt) {
-    return evt.touches ||             // browser API
-        evt.originalEvent.touches; // jQuery
+    return evt.touches             // browser API
+        || evt.originalEvent.touches; // jQuery
 }
 
 function handleTouchStart(evt) {
@@ -158,7 +159,7 @@ function handleTouchMove(evt) {
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
 
-    if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
+    if (Math.abs(xDiff) > Math.abs(yDiff)) { /* most significant*/
         if (xDiff > 0) {
             /* left swipe */
         } else {

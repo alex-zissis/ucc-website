@@ -49,6 +49,8 @@
 			</div>
 		</section>
 		<section class="white" id="whatwedo">
+			<h1 class="heading">What we do</h1>
+
 			<div class="wwd-container">
 				{{#each WWD}}
 				<div class="flip-container">
@@ -144,7 +146,17 @@
 		<section class="module content white">
 			<div class="container" id="sponsors">
 				<h2>Sponsors</h2>
+				<div class="sponsors-container">
+					{{#each sponsors}}
+					<a href="{{this.website}}" target="_blank">
+						<div class="sponsor">
+							<img class="sponsor-img" src="{{this.image.secure_url}}" alt="{{this.name}}">
+						</div>
+					</a>
+					{{/each}}
+				</div>
 			</div>
 		</section>
 	</div>
+
 </div>

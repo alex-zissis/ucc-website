@@ -4,6 +4,7 @@ var Link = keystone.list('Link');
 var StaticContent = keystone.list('StaticContent');
 var WWD = keystone.list('WWD');
 var Image = keystone.list('Image');
+var Sponsor = keystone.list('Sponsor');
 
 exports = module.exports = function (req, res) {
 
@@ -25,7 +26,7 @@ exports = module.exports = function (req, res) {
 		var updater = application.getUpdateHandler(req);
 
 		updater.process(req.body, {
-			flashErrors: true
+			flashErrors: true,
 		}, function (err) {
 			if (err) {
 				locals.validationErrors = err.errors;
@@ -78,10 +79,8 @@ exports = module.exports = function (req, res) {
 				return next(err);
 			}
 			for (var i = 0; i < results.length; i++) {
-				console.log(results[i])
 				locals.images[results[i].name] = results[i].image;
 			}
-			console.log(locals.images)
 			next();
 
 		}, function (err) {
@@ -98,6 +97,22 @@ exports = module.exports = function (req, res) {
 			}
 
 			locals.WWD = results;
+			next();
+
+		}, function (err) {
+			next(err);
+		});
+
+	});
+
+	view.on('init', function (next) {
+
+		Sponsor.model.find().exec(function (err, results) {
+			if (err || !results.length) {
+				return next(err);
+			}
+
+			locals.sponsors = results;
 			next();
 
 		}, function (err) {
