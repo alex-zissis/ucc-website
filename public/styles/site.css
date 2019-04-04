@@ -6200,6 +6200,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   margin: auto; }
   @media (max-width: 599px) {
     .sponsors-container {
@@ -6295,11 +6296,11 @@ section {
       width: 90%; } }
   @media (min-width: 900px) {
     .ms-container {
-      width: 60%; } }
+      width: 80%; } }
 
 .mission-statement {
   color: #161447;
-  font-size: 2em;
+  font-size: 1.4em;
   border-left: 10px solid #2616dd;
   font-weight: 100;
   height: max-content;

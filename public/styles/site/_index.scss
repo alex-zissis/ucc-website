@@ -93,13 +93,13 @@ section {
     }
 
     @include for-tablet-landscape-up {
-        width: 60%;
+        width: 80%;
     }
 }
 
 .mission-statement {
     color: $blue-grey;
-    font-size: 2em;
+    font-size: 1.4em;
     border-left: 10px solid $deep-blue;
     font-weight: 100;
     height: max-content;

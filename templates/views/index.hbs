@@ -8,10 +8,6 @@
 			{{#each links}}
 			<a class="sidelink" onclick="scrollFromSidebar('{{this.element}}')">{{this.displayText}}</a>
 			{{/each}}
-			{{!-- <a class="sidelink" onclick="scrollFromSidebar('.content-container')">What we do</a>
-			<a class="sidelink" onclick="scrollFromSidebar('#contactus')">Contact us</a>
-			<a class="sidelink" onclick="scrollFromSidebar('#portfolio')">Portfolio</a>
-			<a class="sidelink" onclick="scrollFromSidebar('#sponsors')">Sponsors</a> --}}
 		</div>
 	</div>
 </div>
@@ -24,10 +20,6 @@
 			{{#each links}}
 			<a class="navlink" onclick="scrollToDiv('{{this.element}}')">{{this.displayText}}</a>
 			{{/each}}
-			{{!-- <a class="navlink" onclick="scrollToDiv('.content-container')">What we do</a>
-			<a class="navlink" onclick="scrollToDiv('#contactus')">Contact us</a>
-			<a class="navlink" onclick="scrollToDiv('#portfolio')">Portfolio</a>
-			<a class="navlink" onclick="scrollToDiv('#sponsors')">Sponsors</a> --}}
 		</div>
 		<i class="fas fa-bars hamburger" onclick="toggleSidebar()"></i>
 	</div>
@@ -57,7 +49,7 @@
 					<div class="card wwd" onclick="cardFlip(event)">
 						<div class="face front">
 							<h3>{{this.title}}</h3>
-							<img src="{{this.imagePath}}">
+							<img src="{{this.image.secure_url}}">
 						</div>
 						<div class="face back">
 							<h3>{{this.title}}</h3>
@@ -66,18 +58,6 @@
 					</div>
 				</div>
 				{{/each}}
-				{{!-- <div class="card wwd">
-					<h3>Industry Events</h3>
-					<img src="/images/wwd-networking.svg">
-				</div>
-				<div class="card wwd">
-					<h3>Pro Bono Consulting</h3>
-					<img src="/images/wwd-consulting.svg">
-				</div>
-				<div class="card wwd">
-					<h3>Workshops</h3>
-					<img src="/images/wwd-workshops.svg">
-				</div> --}}
 			</div>
 			<p class="desc">{{static.AboutUs}}</p>
 		</section>
