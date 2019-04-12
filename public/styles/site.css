@@ -6672,11 +6672,11 @@ section.module.parallax.ios {
   display: none; }
 
 .slideleft {
-  animation-duration: .5s;
+  animation-duration: 1s;
   animation-name: slideleft; }
 
 .slideright {
-  animation-duration: .5s;
+  animation-duration: 1s;
   animation-name: slideright; }
 
 .shown {
