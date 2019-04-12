@@ -5,7 +5,11 @@ var StaticContent = keystone.list('StaticContent');
 var WWD = keystone.list('WWD');
 var Image = keystone.list('Image');
 var Sponsor = keystone.list('Sponsor');
+var Testimonial = keystone.list('Testimonial');
+var Section = keystone.list('Section');
+var Social = keystone.list('Social');
 var sendEmail = require('../../sendEmail');
+var Handlebars = require('handlebars');
 
 exports = module.exports = function (req, res) {
 
@@ -16,6 +20,9 @@ exports = module.exports = function (req, res) {
 	locals.WWD = [];
 	locals.static = {};
 	locals.images = {};
+	locals.sections = [];
+	locals.socials = [];
+	locals.showcases = [];
 
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
@@ -38,6 +45,38 @@ exports = module.exports = function (req, res) {
 				locals.enquirySubmitted = true;
 			}
 			next();
+		});
+
+	});
+
+	view.on('init', function (next) {
+
+		Testimonial.model.find().exec(function (err, results) {
+			if (err || !results.length) {
+				return next(err);
+			}
+
+			locals.showcases = results;
+			next();
+
+		}, function (err) {
+			next(err);
+		});
+
+	});
+
+	view.on('init', function (next) {
+
+		Sponsor.model.find().exec(function (err, results) {
+			if (err || !results.length) {
+				return next(err);
+			}
+
+			locals.sponsors = results;
+			next();
+
+		}, function (err) {
+			next(err);
 		});
 
 	});
@@ -110,12 +149,40 @@ exports = module.exports = function (req, res) {
 
 	view.on('init', function (next) {
 
-		Sponsor.model.find().exec(function (err, results) {
+		Section.model.find().exec(function (err, results) {
+			if (err || !results.length) {
+				return next(err);
+			}
+			var renderedRes = [];
+
+			for (var i = 0; i < results.length; i++) {
+				var result = results[i];
+				renderedRes[i] = result;
+				if (result.hbs === true) {
+					var template = Handlebars.compile(result.content);
+					var data = {};
+					data[result.locals] = locals[result.locals];
+					renderedRes[i].content = template(data);
+				}
+
+			}
+			locals.sections = renderedRes;
+			next();
+
+		}, function (err) {
+			next(err);
+		});
+
+	});
+
+	view.on('init', function (next) {
+
+		Social.model.find().exec(function (err, results) {
 			if (err || !results.length) {
 				return next(err);
 			}
 
-			locals.sponsors = results;
+			locals.socials = results;
 			next();
 
 		}, function (err) {

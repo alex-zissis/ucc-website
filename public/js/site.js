@@ -58,6 +58,42 @@ function invalidCallback(id) {
     error.innerText = msg;
 }
 
+var selectedDot = 0;
+
+function pagenationClick(index) {
+    if (index !== selectedDot) {
+        var dots = document.getElementsByClassName('pagenation-dot');
+        var dividers = document.getElementsByClassName('divider');
+
+
+        if (dividers[selectedDot].classList.contains('slideleft')) {
+            dividers[selectedDot].classList.remove('slideleft');
+        }
+
+        if (dividers[selectedDot].classList.contains('slideright')) {
+            dividers[selectedDot].classList.remove('slideright');
+        }
+
+        dots[selectedDot].classList.remove('selected');
+        dots[selectedDot].classList.add('unselected');
+        dividers[selectedDot].classList.remove('shown');
+        dividers[selectedDot].classList.add('hidden');
+
+        dots[index].classList.remove('unselected');
+        dots[index].classList.add('selected');
+        dividers[index].classList.remove('hidden');
+        dividers[index].classList.add('shown');
+
+        if (index < selectedDot) {
+            dividers[index].classList.add('slideleft');
+        } else {
+            dividers[index].classList.add('slideright');
+        }
+        selectedDot = index;
+    }
+
+}
+
 function validCallback(id) {
     var error = document.getElementById('ef-err-' + id.split('-')[1]);
     error.innerText = '';
@@ -98,6 +134,14 @@ function scrollFromSidebar(selector) {
 // }, false);
 
 window.onload = function () {
+    var showcase = document.getElementsByClassName('divider')[0];
+    showcase.classList.remove('hidden');
+    showcase.classList.add('shown');
+
+    var dot = document.getElementsByClassName('pagenation-dot')[0];
+    dot.classList.remove('unselected');
+    dot.classList.add('selected');
+
     if (/^(iPhone|iPad|iPod)/.test(navigator.platform)) {
         var elems = document.getElementsByClassName('parallax');
 

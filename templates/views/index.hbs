@@ -33,10 +33,10 @@
 
 	<div class="content-container">
 		<section class="grey">
-			<h1 class="heading">Mission statement</h1>
+			<h1 class="heading">Our Mission</h1>
 			<div class="ms-container">
 				<div class="mission-statement">
-					<span class="ms-text">" {{static.MissionStatement}} "</span>
+					<span class="ms-text">{{{static.MissionStatement}}}</span>
 				</div>
 			</div>
 		</section>
@@ -48,8 +48,11 @@
 				<div class="flip-container">
 					<div class="card wwd" onclick="cardFlip(event)">
 						<div class="face front">
-							<h3>{{this.title}}</h3>
-							<img src="{{this.image.secure_url}}">
+							<div class="wwd-flex">
+								<img class="wwd-icon" src="{{this.icon.secure_url}}" />
+								<h3>{{this.title}}</h3>
+							</div>
+							<img src=" {{this.image.secure_url}}">
 						</div>
 						<div class="face back">
 							<h3>{{this.title}}</h3>
@@ -68,75 +71,30 @@
 	</div>
 
 	<div class="paralex-container">
-		<section class=" module parallax parallax-1">
+		{{#each sections}}
+		<section class="module parallax" style="background-image: url('{{this.background.secure_url}}')">
 			<div class="container">
 			</div>
 		</section>
 		<!--first section -->
-		<section class="module content white">
-			<div class="container" id="portfolio">
-				<h2>Portfolio showcase</h2>
-
+		<section class="module content {{this.section_color}}">
+			<div class="container" id="{{this.sectionid}}">
+				<h2>{{this.title}}</h2>
+				{{{this.content}}}
 			</div>
 		</section>
-		<!--Grand Canyon content -->
-
-		<section class="module parallax parallax-2">
-			<div class="container">
-			</div>
-		</section> <!-- end of rocky mountains -->
-
-		<section class="module content grey">
-			<div class="container" id="contactus">
-				<h2>Contact us</h2>
-				<a class="activate-link" href="https://activateuts.com.au/clubs/uts-consulting-club" target="_blank">
-					<img src="/images/activate_logo.svg"> <span>Join Us</span>
-				</a>
-				<br><br><br><br>
-				<form method="post" class="contact-form">
-					<input type='hidden' name='action' value='contact'>
-					<input type="text" id="cf-name" name="name" minlength="1" maxlength="40" class="cf-input"
-						placeholder="Name" required onfocus="addTouched('cf-name')"
-						oninvalid="invalidCallback('cf-name')" onkeydown="fieldValidation('cf-name')"><br>
-					<span class="error-text" id="ef-err-name"></span> <br>
-					<input type="email" id="cf-email" minlength="1" name="email" maxlength="40" class="cf-input"
-						placeholder="Email" required onfocus="addTouched('cf-email')"
-						oninvalid="invalidCallback('cf-email')" onkeydown="fieldValidation('cf-email')"><br>
-					<span class="error-text" id="ef-err-email"></span><br>
-					<input type="text" id="cf-subject" minlength="1" name="subject" maxlength="40" class="cf-input"
-						placeholder="Subject" required onfocus="addTouched('cf-subject')"
-						oninvalid="invalidCallback('cf-subject')" onkeydown="fieldValidation('cf-subject')"><br>
-					<span class="error-text" id="ef-err-subject"></span><br>
-					<textarea type="text" id="cf-message" minlength="0" name="message" maxlength="1280" class="cf-input"
-						placeholder="Message" required onfocus="addTouched('cf-message')"
-						oninvalid="invalidCallback('cf-message')"
-						onkeydown="fieldValidation('cf-message')"></textarea><br>
-					<span class="error-text" id="ef-err-message"></span><br><br>
-					<input type="submit" class="cf-submit" value="Submit">
-				</form>
-			</div>
-
-		</section> <!-- end Rocky Mountain content -->
-
-		<section class="module parallax parallax-3">
-			<div class="container">
-			</div>
-		</section>
-
-		<section class="module content white">
-			<div class="container" id="sponsors">
-				<h2>Sponsors</h2>
-				<div class="sponsors-container">
-					{{#each sponsors}}
-					<a href="{{this.website}}" target="_blank">
-						<div class="sponsor">
-							<img class="sponsor-img" src="{{this.image.secure_url}}" alt="{{this.name}}">
-						</div>
-					</a>
-					{{/each}}
-				</div>
-			</div>
-		</section>
+		{{/each}}
 	</div>
 
 </div>
+<div class="container white">
+	<div id="footer">
+		&copy; UTS Consulting Club 2019<br><br>
+		<div class="social-container">
+			{{#each socials}}
+			<a href="{{this.link}}">
+				<img class="social-image" src="{{this.icon.secure_url}}">
+			</a>
+			{{/each}}
+		</div>
+	</div>
