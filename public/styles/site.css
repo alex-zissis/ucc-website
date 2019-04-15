@@ -6284,8 +6284,9 @@ section {
   cursor: pointer; }
 
 .ms-container {
-  padding: 5% 10%;
-  margin: auto; }
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap; }
   @media (max-width: 599px) {
     .ms-container {
       width: 90%; } }
@@ -6294,19 +6295,29 @@ section {
       width: 90%; } }
   @media (min-width: 900px) {
     .ms-container {
-      width: 80%; } }
+      width: 100%; } }
 
 .mission-statement {
+  display: flex;
+  align-items: center;
   color: #161447;
   font-size: 1.2em;
   border-left: 10px solid #2616dd;
   font-weight: 100;
-  height: max-content;
+  padding: 10px;
   background-color: white;
-  padding: 3% 6%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   hyphens: auto;
   -webkit-hyphens: auto; }
+  @media (max-width: 599px) {
+    .mission-statement {
+      width: 100%; } }
+  @media (min-width: 600px) {
+    .mission-statement {
+      width: 100%; } }
+  @media (min-width: 900px) {
+    .mission-statement {
+      width: 60%; } }
 
 .ms-speech {
   display: inline;
@@ -6526,6 +6537,26 @@ section.module.parallax.ios {
 .wwd-image {
   width: 100%; }
 
+.ms-image-cont {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  @media (max-width: 599px) {
+    .ms-image-cont {
+      width: 100%;
+      margin-top: 5vh; } }
+  @media (min-width: 600px) {
+    .ms-image-cont {
+      width: 100%;
+      margin-top: 5vh; } }
+  @media (min-width: 900px) {
+    .ms-image-cont {
+      margin-left: 5%;
+      width: 35%; } }
+
+.ms-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%; }
+
 @media all and (min-width: 600px) {
   section.module h2 {
     font-size: 42px; }
@@ -6586,15 +6617,33 @@ section.module.parallax.ios {
 .quote {
   font-weight: 100;
   font-style: italic;
-  font-size: 1.5em !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: white;
   border-left: 10px solid #2616dd;
-  padding: 5px 10px;
-  width: 100%;
-  text-align: center;
+  padding: 10px 10px;
+  font-size: auto;
+  vertical-align: middle;
   margin-bottom: 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  @media (max-width: 599px) {
+    .quote {
+      width: 100%; } }
+  @media (min-width: 600px) {
+    .quote {
+      width: 100%; } }
+  @media (min-width: 900px) {
+    .quote {
+      max-width: 80%;
+      width: auto; } }
+
+.student-quote {
+  float: right; }
+
+.test-description {
+  float: right; }
 
 .divider {
   width: 100%;
@@ -6607,19 +6656,21 @@ section.module.parallax.ios {
 
 @media (max-width: 599px) {
   .student-image {
-    width: 100%; } }
+    width: 40%;
+    display: block;
+    margin: auto; } }
 
 @media (min-width: 600px) {
   .student-image {
-    width: 80%;
+    width: 40%;
     display: block;
     margin: auto;
     margin-top: 20px; } }
 
 @media (min-width: 900px) {
   .student-image {
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
     float: left;
     object-fit: cover; } }
 
@@ -6678,6 +6729,9 @@ section.module.parallax.ios {
 .slideright {
   animation-duration: 1s;
   animation-name: slideright; }
+
+.showcase-subheading {
+  color: #2616dd; }
 
 .shown {
   display: table; }

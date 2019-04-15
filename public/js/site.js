@@ -142,6 +142,13 @@ window.onload = function () {
     dot.classList.remove('unselected');
     dot.classList.add('selected');
 
+    // var quotes = document.getElementsByClassName('quote');
+
+    // for (var i = 0; i < quotes.length; i++) {
+    //     console.log(quotes[i].id)
+    //     fitty(quotes[i].id);
+    // }
+
     if (/^(iPhone|iPad|iPod)/.test(navigator.platform)) {
         var elems = document.getElementsByClassName('parallax');
 
