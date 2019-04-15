@@ -6703,6 +6703,18 @@ section.module.parallax.ios {
     height: 300px;
     object-fit: cover; } }
 
+@media (max-width: 599px) {
+  #portfolio-image2 {
+    margin-top: 5%; } }
+
+@media (min-width: 600px) {
+  #portfolio-image2 {
+    margin-top: 5%; } }
+
+@media (min-width: 900px) {
+  #portfolio-image2 {
+    margin-top: 25%; } }
+
 .divider:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
