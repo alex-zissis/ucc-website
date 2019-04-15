@@ -413,6 +413,7 @@ section.module.parallax.ios {
 
     @include for-tablet-landscape-up {
         margin-left: 5%;
+        margin-top: 0;
         width: 35%;
     }
 }
@@ -519,9 +520,7 @@ section.module.parallax.ios {
     }
 
     @include for-tablet-landscape-up {
-        max-width: 80%;
-        width: auto;
-
+        width: 100%;
     }
 }
 
@@ -530,7 +529,24 @@ section.module.parallax.ios {
 }
 
 .test-description {
-    float: right;
+    padding: 0 10px;
+}
+
+.portfolio-image {
+    display: block;
+    margin: auto;
+
+    @include for-phone-only {
+        width: 80%;
+    }
+
+    @include for-tablet-portrait-up {
+        width: 80%;
+    }
+
+    @include for-tablet-landscape-up {
+        width: 80%;
+    }
 }
 
 .divider {
@@ -595,15 +611,18 @@ section.module.parallax.ios {
     @include for-phone-only {
         display: block;
         margin: auto;
+        width: 100%;
     }
 
     @include for-tablet-portrait-up {
         display: block;
         margin: auto;
+        width: 100%;
     }
 
     @include for-tablet-landscape-up {
         display: table-cell;
+        width: 50%;
     }
 }
 
@@ -618,6 +637,8 @@ section.module.parallax.ios {
 
 .client-logo {
     margin-bottom: 20px;
+    width: 150px;
+    height: 150px;
 }
 
 .hidden {
